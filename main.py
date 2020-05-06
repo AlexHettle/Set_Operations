@@ -24,6 +24,7 @@ def OR(A,B):
     for i in B:
         if i not in result:
             result.append(i)
+    result.sort()
     LabelOR.configure(text=("A OR B: "+", ".join(result)))
 def XOR(A,B):
     result=[]
@@ -33,6 +34,7 @@ def XOR(A,B):
     for i in B:
         if i not in A and i not in result:
             result.append(i)
+    result.sort()
     LabelXOR.configure(text=("A XOR B: "+", ".join(result)))
 window=Tk()
 window.title("Subsets")
