@@ -1,4 +1,6 @@
 from tkinter import *
+#This function takes in inputs from the two entry and puts them through
+# the AND OR and XOR functions
 def initiate():
     A=EntryA.get()
     ArrayA=[x.strip() for x in A.split(',')]
@@ -9,6 +11,7 @@ def initiate():
     AND(ArrayA,ArrayB)
     OR(ArrayA,ArrayB)
     XOR(ArrayA,ArrayB)
+#finds the AND of the two sets
 def AND(A,B):
     result=[]
     for i in A:
@@ -16,6 +19,7 @@ def AND(A,B):
             result.append(i)
     result.sort()
     LabelAND.configure(text=("A AND B: "+", ".join(result)))
+#finds the OR of the two sets
 def OR(A,B):
     result=[]
     for i in A:
@@ -26,6 +30,7 @@ def OR(A,B):
             result.append(i)
     result.sort()
     LabelOR.configure(text=("A OR B: "+", ".join(result)))
+#Finds the XOR of the two sets
 def XOR(A,B):
     result=[]
     for i in A:
@@ -36,6 +41,7 @@ def XOR(A,B):
             result.append(i)
     result.sort()
     LabelXOR.configure(text=("A XOR B: "+", ".join(result)))
+#This chunk of code sets up the GUI
 window=Tk()
 window.title("Subsets")
 window.geometry("800x450")
